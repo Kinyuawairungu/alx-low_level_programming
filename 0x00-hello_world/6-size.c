@@ -18,6 +18,6 @@ printf("size of a int: %ld byte(s)\n", sizeof(age));
 printf("size of a long int: %ld byte(s)\n", sizeof(myage));
 printf("Size of a long long int: %ld byte(s)\n", sizeof(_myage));
 printf("Size of a float: %ld byte(s)\n", sizeof(salary));
-return(0);
+return (0);
 return (0);
 }
