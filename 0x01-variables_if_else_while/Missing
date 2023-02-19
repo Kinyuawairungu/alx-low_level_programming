@@ -1,0 +1,5 @@
+ilphabets.c:12: ERROR: spaces required around that '=' (ctx:WxV)
+3-print_alphabets.c:12: ERROR: space required after that ';' (ctx:VxV)
+3-print_alphabets.c:13: WARNING: space prohibited before semicolon
+3-print_alphabets.c:14: ERROR: trailing whitespace
+3-print_alphabets.c:19: WARNING: space prohibited before semicolon
