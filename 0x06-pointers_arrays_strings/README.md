@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #More pointers, arrays and strings.
 
 #TASKS
@@ -137,3 +138,6 @@ You are not allowed to use ,
 	You are allowed to use the standard library
 	The output should look like the following example, and formatted exactly the same way
 
+=======
+more strings arrays and pointers
+>>>>>>> 579510e27822caf5c80b463c46ab25479e5cb7f4
