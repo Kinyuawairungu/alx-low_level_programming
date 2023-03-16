@@ -20,7 +20,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 		len1++;
 
-	while (s2 && s@[len2])
+	while (s2 && s2[len2])
 
 		len2++;
 
