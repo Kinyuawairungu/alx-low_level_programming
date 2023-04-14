@@ -2,7 +2,7 @@ include "main.h"
 
 /**
  * append_text_to_file - appends text to files
- * @filename: pointer that poins to file being append to
+ * @filename: pointer points to file being append to
  * @text_content: pointer points to text to append
  * Return: 1 or -1
  */
