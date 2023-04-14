@@ -1,13 +1,11 @@
 include "main.h"
 
-
 /**
  * append_text_to_file - appends text to files
  * @filename: pointer that poins to file being append to
  * @text_content: pointer points to text to append
  * Return: 1 or -1
  */
-
 int append_text_to_file(const char *filename, char *text_content)
 
 {
