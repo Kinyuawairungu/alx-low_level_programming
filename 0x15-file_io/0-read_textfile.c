@@ -2,28 +2,44 @@
 
 
 /**
- * binary_to_uint - will convert a binary to unsigned int
- * @b: pointer that points to a string of 0 to 1 characters
- * Returns: unsined int
+ * read_textfile - reads a text file and prints the text file
+ * @filename: pointer that points to the file name
+ * @letters:params
+ * Return:number of letters
  */
 
-unsigned int binary_to_uint(const char *b)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
-	unsigned int result = 0;
-	int i = 0;
+	int read_count, fd, write_count;
 
-	if (b == NULL)
+	char *buffer;
+
+	if (!filename)
+
 		return (0);
 
-	while (b[i] != '\0')
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+		return (0);
+
+	buffer = malloc(sizeof(char) * letters);
+	if (!buffer)
+		return (0);
+
+	read_count = read(fd, buffer, letters);
+	if (read_count == -1)
 	{
-		if (b[i] != '0' && b[i] != '1')
-
-			return (0);
-
-		result = (result << 1) + (b[i] - '0');
-
-		i++;
+		free(buffer);
+		close(fd);
+		return (0);
 	}
-	return (result);
+
+	write_count = write(STDOUT_FILENO, buffer, read_count);
+	free(buffer);
+	close(fd);
+
+	if (read_count != write_count)
+		return (0);
+
+	return (write_count);
 }
