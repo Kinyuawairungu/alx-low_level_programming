@@ -1,21 +1,45 @@
-#include "main.h"
+include "main.h"
 
 
 /**
- *get_bit - returns bit at a specific index
- *@n: tests par
- *@index: gives position
- *Return: bit at position n
+ * append_text_to_file - appends text to files
+ * @filename: pointer that poins to file being append to
+ * @text_content: pointer points to text to append
+ * Return: 1 or -1
  */
 
-int get_bit(unsigned long int n, unsigned int index)
-{
-	unsigned long int buffer;
+int append_text_to_file(const char *filename, char *text_content)
 
-	if (index >= sizeof(unsigned long int) * 8)
+{
+	int fd, len = 0, write_len;
+
+	if (!filename)
 
 		return (-1);
 
-	buffer = 1UL << index;
-	return ((n & buffer) ? 1 : 0);
+	fd = open(filename, O_WRONLY | O_APPEND);
+
+	if (fd == -1)
+
+		return (-1);
+
+	if (text_content)
+
+	{
+		while (text_content[len])
+
+			len++;
+
+		write_len = write(fd, text_content, len);
+
+		if (write_len == -1)
+		{
+			close(fd);
+
+			return (-1);
+		}
+	}
+	close(fd);
+
+	return (1);
 }
