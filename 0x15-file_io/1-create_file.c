@@ -1,21 +1,36 @@
 #include "main.h"
 
-
 /**
- * print_binary - converts number to binary
- * @n: tests parameter
+ * create_file - creates a file
+ * @filename: pointer points to filename to be created
+ * @text_content:  pointer points to text to be created
+ * Return: 1 or -1
  */
 
-#include <stdio.h>
+int create_file(const char *filename, char *text_content)
 
-void print_binary(unsigned long int n)
 {
-	if (n > 1)
+	int fd, urefu = 0;
+
+	if (filename == NULL)
+		return (-1);
+
+	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+
+	if (fd < 0)
+		return (-1);
+
+	if (text_content != NULL)
 
 	{
-
-		print_binary(n >> 1);
+		while (text_content[urefu])
+			urefu++;
+		if (write(fd, text_content, urefu) != urefu)
+		{
+			close(fd);
+			return (-1);
+		}
 	}
-
-	_putchar((n & 1) ? '1' : '0');
+	close(fd);
+	return (1);
 }
