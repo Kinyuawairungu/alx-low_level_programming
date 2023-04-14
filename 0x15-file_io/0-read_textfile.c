@@ -3,7 +3,7 @@
 
 /**
  * read_textfile - reads a text file and prints the text file
- * @filename: pointer that points to the file name
+ * @filename: pointer points to the file name
  * @letters:params
  * Return:number of letters
  */
@@ -11,11 +11,11 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int read_count, fd, write_count;
-
+	
 	char *buffer;
 
 	if (!filename)
-
+	
 		return (0);
 
 	fd = open(filename, O_RDONLY);
