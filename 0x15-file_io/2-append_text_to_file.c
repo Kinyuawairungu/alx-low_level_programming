@@ -1,8 +1,8 @@
 include "main.h"
 
 /**
- * append_text_to_file - appends text to files
- * @filename: pointer points to file being append to
+ * append_text_to_file - appends text to a file
+ * @filename: pointer points to file to append
  * @text_content: pointer points to text to append
  * Return: 1 or -1
  */
